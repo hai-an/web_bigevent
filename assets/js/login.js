@@ -41,7 +41,7 @@ $( function ()
         e.preventDefault();
         $.ajax( {
             method: "post",
-            url: "http://www.liulongbin.top:3007/api/reguser",
+            url: "api/reguser",
             data: { username: $( '#form_reg [name=username]' ).val(), password: $( '#form_reg [name=password]' ).val() },
             success: function ( res )
             {

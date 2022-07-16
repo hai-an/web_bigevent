@@ -21,7 +21,7 @@ iframe {
 }
 
 /* 左侧个人头像 */
-.layui-side-scroll .userinfor {
+.layui-side-scroll .userinfo{
     height: 100px;
     line-height: 100px;
     text-align: center;
@@ -33,7 +33,7 @@ iframe {
     height: 40px;
 }
 
-.textavar {
+.text-avatar {
     display: inline-block;
     position: relative;
     top: 4px;
