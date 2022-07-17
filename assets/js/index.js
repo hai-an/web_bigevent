@@ -1,6 +1,26 @@
 $( function ()
 {
     getUserInfo()
+
+
+    //引入插件的方法
+    const layer = layui.layer
+
+    // 实现点击按钮 退出功能
+    $( '#btnLogout' ).on( 'click', function ()
+    {
+        // 1.弹出提示框
+        layer.confirm( '确定要退出登录吗?', { icon: 3, title: '提示' }, function ( index )
+        {
+            // 2.清除 本地存储token值
+            localStorage.removeItem( 'token' )
+            //3. 跳转到登录页面
+            location.href = '/login.html'
+            //4. 关闭询问框
+            layer.close( index );
+        } );
+
+    } )
 } )
 // 获取用户基本信息
 function getUserInfo ()
@@ -23,7 +43,25 @@ function getUserInfo ()
             console.log( res.message );
             // 成功 调用 renderAvatar渲染头像函数
             renderAvatar( res.data )
-        }
+        },
+
+        // 不管成功还是失败都会调用 complete函数
+    //     complete: function ( res )
+    //     {
+    //         console.log( res );
+    //         // 失败的情况下
+    //         if ( res.responseJSON.message === "身份认证失败！" &&
+    //             res.responseJSON.status === 1 )
+    //         {
+    //             console.log( '111' );
+    //             // 清除 本地存储token值
+    //             localStorage.removeItem( 'token' )
+    //             // 跳转到登录页面
+    //             location.href = '/login.html'
+    //         }
+
+    //     }
+
     } );
 }
 

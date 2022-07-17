@@ -12,4 +12,20 @@ $.ajaxPrefilter( function ( option )
             Authorization: localStorage.getItem( 'token' ) || ''
         }
     }
-} )
+
+    option.complete = function ( res )
+    {
+        console.log( res );
+        // 失败的情况下
+        if ( res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！' )
+        {
+            console.log( '111' );
+            // 清除 本地存储token值
+            localStorage.removeItem( 'token' )
+            // 跳转到登录页面
+            location.href = '/login.html'
+        }
+
+    }
+
+} );
