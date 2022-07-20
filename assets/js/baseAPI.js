@@ -2,7 +2,7 @@
 $.ajaxPrefilter( function ( option )
 {
     // 再发起请求之前,option.url都会发起一次请求路径拼接
-    option.url = 'http://www.liulongbin.top:3007/' + option.url
+    option.url = 'http://api-breakingnews-web.itheima.net' + option.url
     // 统一  请求头接口 以 /my/ 开头才需要
 
     // 请求地址 . indexOf('查找的字符串') 找不到返回-1

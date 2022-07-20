@@ -41,7 +41,7 @@ $( function ()
         e.preventDefault();
         $.ajax( {
             method: "post",
-            url: "api/reguser",
+            url: "/api/reguser",
             data: { username: $( '#form_reg [name=username]' ).val(), password: $( '#form_reg [name=password]' ).val() },
             success: function ( res )
             {
@@ -65,7 +65,7 @@ $( function ()
         // 发起ajaxqingq
         $.ajax( {
             method: 'post',
-            url: "api/login",
+            url: "/api/login",
             // 通过form,seri
             data: $( this ).serialize(),
             success: function ( res )

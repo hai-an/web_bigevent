@@ -52,3 +52,7 @@ body {
 .reg-box a {
     font-size: 12px;
 }
+
+* {
+    user-select: none;
+}

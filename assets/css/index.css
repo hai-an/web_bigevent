@@ -3,6 +3,10 @@
     font-size: 12px;
 }
 
+* {
+    user-select: none;
+}
+
 span.iconfont {
     margin-right: 8px;
 }
@@ -21,7 +25,7 @@ iframe {
 }
 
 /* 左侧个人头像 */
-.layui-side-scroll .userinfo{
+.layui-side-scroll .userinfo {
     height: 100px;
     line-height: 100px;
     text-align: center;

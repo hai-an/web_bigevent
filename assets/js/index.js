@@ -27,7 +27,7 @@ function getUserInfo ()
 {
     $.ajax( {
         method: "GET",
-        url: "my/userinfo",
+        url: "/my/userinfo",
         // data: "data",
         // headers: {
         //     Authorization: localStorage.getItem( 'token' ) || ''
@@ -36,31 +36,34 @@ function getUserInfo ()
         {
             if ( res.status !== 0 )
             {
-                return layui.layer.msg( '获取用户信息失败!' );
+                return layer.msg( '获取用户信息失败!' );
 
             }
 
             console.log( res.message );
+            console.log( '----------------------------' );
+            console.log( res.data );
+
             // 成功 调用 renderAvatar渲染头像函数
             renderAvatar( res.data )
         },
 
         // 不管成功还是失败都会调用 complete函数
-    //     complete: function ( res )
-    //     {
-    //         console.log( res );
-    //         // 失败的情况下
-    //         if ( res.responseJSON.message === "身份认证失败！" &&
-    //             res.responseJSON.status === 1 )
-    //         {
-    //             console.log( '111' );
-    //             // 清除 本地存储token值
-    //             localStorage.removeItem( 'token' )
-    //             // 跳转到登录页面
-    //             location.href = '/login.html'
-    //         }
+        //     complete: function ( res )
+        //     {
+        //         console.log( res );
+        //         // 失败的情况下
+        //         if ( res.responseJSON.message === "身份认证失败！" &&
+        //             res.responseJSON.status === 1 )
+        //         {
+        //             console.log( '111' );
+        //             // 清除 本地存储token值
+        //             localStorage.removeItem( 'token' )
+        //             // 跳转到登录页面
+        //             location.href = '/login.html'
+        //         }
 
-    //     }
+        //     }
 
     } );
 }
