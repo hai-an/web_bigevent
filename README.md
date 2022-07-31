@@ -1,3 +1,2 @@
 # web_bigevent
-this is a bigEventProject .
-这是一个说明文件
+Welcome my GitHub Project '后台管理事件'
